@@ -53,6 +53,15 @@ class _TransactionScreenState extends State<TransactionScreen> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: const Color(0xFF01C7B1),
+        onPressed: () {
+        },
+        label: const Text("SEND NEW"),
+        icon: const Icon(Icons.add_circle),
+
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
