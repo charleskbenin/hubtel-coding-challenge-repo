@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:hubtel_coding_challenge/features/home/presentation/screen/home_screen.dart';
 import 'package:hubtel_coding_challenge/features/transaction/presentation/screens/transaction_screen.dart';
 
 import '../constants/colors.dart';
@@ -13,6 +14,8 @@ class AppNavigator {
     final args = settings.arguments;
 
     switch (settings.name) {
+      case AppRoute.homeScreen:
+        return MaterialPageRoute(builder: (context) => const HomeScreen());
       case AppRoute.transaction:
         return MaterialPageRoute(builder: (context) => const TransactionScreen());
 

@@ -49,7 +49,7 @@ class _ButtonSwitcherState extends State<ButtonSwitcher> with TickerProviderStat
             borderRadius:  BorderRadius.all(Radius.circular(6)),
             color: kGrey
           ),
-          padding: EdgeInsets.all(4),
+          padding: const EdgeInsets.all(4),
           width: double.infinity,
           child: Theme(
             data: ThemeData(
@@ -70,7 +70,7 @@ class _ButtonSwitcherState extends State<ButtonSwitcher> with TickerProviderStat
         SizedBox(
           height: 8.h,
         ),
-        const Divider(height: 6, color: kGrey700,),
+        const Divider(height: 6, color: kGrey,),
         Expanded(
           child: TabBarView(
             controller: _controller,

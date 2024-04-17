@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hubtel_coding_challenge/core/constants/colors.dart';
 
-import '../../../../core/constants/common.dart';
 import '../widgets/history_card.dart';
 
 class HistoryTab extends StatefulWidget {
@@ -16,6 +15,29 @@ class HistoryTab extends StatefulWidget {
 
 class _HistoryTabState extends State<HistoryTab> {
   bool _isLoading = true;
+  final List<Map<String, dynamic>> historyData = [
+    {
+      'title': "Emmanuel Rockson\nKwabena Uncle Ebo",
+      'image': "assets/img/MTN Mobile Money.png",
+      'number': "024 123 4567",
+      'date': "14:45PM",
+      'status': "success",
+    },
+    {
+      'title': "Absa Bank",
+      'image': "assets/img/images.png",
+      'number': "024 123 4567",
+      'date': "14:45PM",
+      'status': "failed",
+    },
+    {
+      'title': "Absa Bank",
+      'image': "assets/img/images.png",
+      'number': "024 123 4567",
+      'date': "14:45PM",
+      'status': "success",
+    },
+  ];
 
   @override
   void initState() {
@@ -26,6 +48,12 @@ class _HistoryTabState extends State<HistoryTab> {
         _isLoading = false;
       });
     });
+  }
+
+  @override
+  void dispose() {
+    _isLoading = false;
+    super.dispose();
   }
 
   @override
@@ -72,7 +100,7 @@ class _HistoryTabState extends State<HistoryTab> {
                       width: 10.h,
                     ),
                     SvgPicture.asset(
-                      '$kSvgPath/Group 38142.svg',
+                      'assets/Group 38142.svg',
                       fit: BoxFit.cover,
                       height: 40.h,
                       width: 40.w,
@@ -92,16 +120,8 @@ class _HistoryTabState extends State<HistoryTab> {
                 SizedBox(
                   height: 16.h,
                 ),
-                ListView.builder(
-                  itemCount: 3,
-                  shrinkWrap: true,
-                  primary: false,
-                  itemBuilder: (context, index){
-                    return Padding(
-                      padding: EdgeInsets.only(bottom: 16.h),
-                      child: const HistoryCard(),
-                    );
-                  },
+                HistoryCard(
+                  data: historyData,
                 ),
               ],
             ),
